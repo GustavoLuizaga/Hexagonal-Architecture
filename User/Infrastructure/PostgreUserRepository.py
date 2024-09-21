@@ -10,6 +10,9 @@ class PostgreUserRepository(UserRepository):
         return user
 
     def searchUserGmail(self, gmail:str) -> User:
-        postgreUser = PostgreUser.objects.get(username=gmail)
-        user = User(first_name="", last_name="", username=postgreUser.username, email=postgreUser.email,password=postgreUser.password)
-        return user
+        try:
+            postgreUser = PostgreUser.objects.get(email=gmail)
+            user = User(first_name="", last_name="", username=postgreUser.username, email=postgreUser.email,password=postgreUser.password)
+            return user
+        except PostgreUser.DoesNotExist:
+            return None
