@@ -5,3 +5,6 @@ class UserRepository(ABC):
     def saveUser(self, user:User) -> User:
         pass
 
+    @abstractmethod
+    def searchUserGmail(self, gmail:str) -> User:
+        pass

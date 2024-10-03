@@ -16,10 +16,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from User.Interface.views import register_user
+from User.Interface.views import register_user, search_user
 from django.shortcuts import render
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('register/', register_user, name='register'),
+    path('buscar/', search_user, name='search_user'),
+path('buscar2/', search_user, name='search_user'),
+
 ]
