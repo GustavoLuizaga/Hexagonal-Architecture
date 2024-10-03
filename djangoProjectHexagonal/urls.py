@@ -23,4 +23,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('register/', register_user, name='register'),
     path('buscar/', search_user, name='search_user'),
+path('buscar2/', search_user, name='search_user'),
+
 ]
